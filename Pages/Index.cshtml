@@ -1,0 +1,43 @@
+﻿@page
+@model VotingSystemWebApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Voting";
+}
+
+<div class="text-center">
+    <h1>Поредни избори 2024</h1>
+    <section id="GERB">
+        <h2>
+            @Html.DisplayFor(model => model.Gerb.Party)
+        </h2>
+        <form asp-page-handler="OnPost" method="post">
+            <input asp-for="PartyVotedFor" value="GERB" hidden />
+            <button id="VoteForGerb" type="submit">
+                Гласувай!
+            </button>
+        </form>
+    </section>
+    <section id="BSP">
+        <h2>
+            @Html.DisplayFor(model => model.BSP.Party)
+        </h2>
+        <form asp-page-handler="OnPost" method="post">
+            <input asp-for="PartyVotedFor" value="BSP" hidden/>
+            <button id="VoteForBSP" type="submit">
+                Гласувай!
+            </button>
+        </form>
+
+    </section>
+    <section id="ATAKA">
+        <h2>
+            @Html.DisplayFor(model => model.Ataka.Party)
+        </h2>
+        <form asp-page-handler="OnPost" method="post">
+            <input asp-for="PartyVotedFor" value="Ataka" hidden />
+            <button id="VoteForAtaka" type="submit">
+                Гласувай!
+            </button>
+        </form>
+    </section>
+</div>
